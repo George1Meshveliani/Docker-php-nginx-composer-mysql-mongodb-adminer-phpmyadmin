@@ -26,3 +26,7 @@ You can change your database password `changme` into `docker-compose.yml` file.
 | MongoDB  | Database management system  |
 | adminer  | Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server. Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Elasticsearch, MongoDB and others via plugin.|
 | phpmyadmin  | phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL, MariaDB and MongoDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement.  |
+
+
+
+If use old versions of OS, change version '3.8' with version '3.3' or '2.2' inside of docker-compose.yml file
