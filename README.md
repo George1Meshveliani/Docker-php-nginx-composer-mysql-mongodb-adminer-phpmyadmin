@@ -29,4 +29,4 @@ You can change your database password `changme` into `docker-compose.yml` file.
 
 
 
-If use old versions of OS, change version '3.8' with version '3.3' or '2.2' inside of docker-compose.yml file
+If you use old versions of OS, change version '3.8' with version '3.3' or '2.2' inside of docker-compose.yml file
