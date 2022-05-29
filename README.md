@@ -13,7 +13,7 @@ This simple repository can help you install all necessary stacks to build simple
 5. Database username: `root`
 6. Initial password of the database: `changeme`
 
-You can change your database password(`changme`) into `docker-compose.yml` file.
+You can change your database password `changme` into `docker-compose.yml` file.
 
 #### Stacks table
 
