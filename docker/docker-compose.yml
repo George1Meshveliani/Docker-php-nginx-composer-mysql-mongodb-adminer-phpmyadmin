@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    container_name: my-app
+    restart: always
+    working_dir: /var/www/
+    volumes:
+      - ../src:/var/www
+# --- server - 'nginx' ---
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: my-nginx
+    restart: always
+    ports:
+      - 8000:80
+    volumes:
+      - ../src:/var/www
+      - ./nginx:/etc/nginx/conf.d
+# --- composer  ---
+  composer_installation:
+    container_name: composer_installation
+    image: composer
+    working_dir: /var/www/
+    volumes:
+      - ../src:/var/www
+    command: sh -c "composer install --ignore-platform-reqs && cp .env.example .env && php artisan key:generate"
+
+# --- database - 'mysql' ---
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+
+# --- database environment - 'adminer' ---
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+# --- database - 'mariadb' ---
+#  db:
+#    image: mariadb:10.3
+#    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD: changeme
+
+# --- database environment - 'phpmyadmin' ---
+#  phpmyadmin:
+#    image: phpmyadmin
+#    restart: always
+#    ports:
+#      - 8080:80
+#    environment:
+#      - PMA_ARBITRARY=1
