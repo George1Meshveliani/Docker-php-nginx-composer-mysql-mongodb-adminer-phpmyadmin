@@ -13,6 +13,8 @@ This simple repository can help you install all necessary stacks to build simple
 5. Database username: `root`
 6. Initial password of the database: `changeme`
 7. Shut down the project: `docker-compose down`
+8. Rebuild images: `docker-compose -d --build`
+9. Remove this repository: `rm -rf .git`
 
 You can change your database password `changme` into `docker-compose.yml` file.
 
